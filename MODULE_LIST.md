@@ -5,7 +5,7 @@ Urutan build (bottom-up based on dependencies):
 | # | Modul | Deskripsi | Status |
 |---|---|---|---|
 | 1 | project-setup | Init Vite + React + TypeScript + Tailwind + ESLint | [x] ✅ PR #10 |
-| 2 | types-and-store | Type definitions, todoReducer, useLocalStorage hook | [ ] |
+| 2 | types-and-store | Type definitions, todoReducer, useLocalStorage hook | [x] ✅ PR #11 |
 | 3 | todo-form | Input form: tambah tugas (judul + deadline) | [ ] |
 | 4 | todo-list | Daftar tugas (TodoItem, toggle status, edit, delete) | [ ] |
 | 5 | filter-bar | Tab filter All / Active / Completed | [ ] |
