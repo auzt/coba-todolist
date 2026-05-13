@@ -1,7 +1,74 @@
 @import "tailwindcss";
 
 @layer base {
+  :root {
+    --bg: 240 15% 98%;
+    --bg-card: 0 0% 100%;
+    --bg-card-hover: 0 0% 97%;
+    --text: 240 10% 3.9%;
+    --text-muted: 240 8% 46%;
+    --border: 240 6% 90%;
+    --accent: 217 91% 60%;
+    --accent-hover: 217 84% 53%;
+    --danger: 0 84% 60%;
+    --danger-hover: 0 78% 52%;
+    --success: 142 71% 45%;
+    --success-hover: 142 66% 40%;
+    --ring: 217 91% 60%;
+  }
+
+  .dark {
+    --bg: 240 10% 3.9%;
+    --bg-card: 240 10% 8%;
+    --bg-card-hover: 240 10% 12%;
+    --text: 0 0% 98%;
+    --text-muted: 240 8% 60%;
+    --border: 240 8% 15%;
+    --accent: 217 91% 60%;
+    --accent-hover: 217 84% 53%;
+    --danger: 0 84% 60%;
+    --danger-hover: 0 78% 52%;
+    --success: 142 71% 45%;
+    --success-hover: 142 66% 40%;
+    --ring: 217 91% 60%;
+  }
+
   body {
-    @apply antialiased;
+    @apply antialiased bg-[hsl(var(--bg))] text-[hsl(var(--text))];
+    transition: background-color 0.3s, color 0.3s;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-lg font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] focus-visible:ring-offset-2 focus-visible:ring-offset-[hsl(var(--bg))] disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-primary {
+    @apply bg-[hsl(var(--accent))] text-white hover:bg-[hsl(var(--accent-hover))] dark:hover:bg-[hsl(var(--accent-hover))];
+  }
+
+  .btn-danger {
+    @apply bg-[hsl(var(--danger))] text-white hover:bg-[hsl(var(--danger-hover))];
+  }
+
+  .btn-ghost {
+    @apply hover:bg-[hsl(var(--bg-card-hover))] text-[hsl(var(--text-muted))];
+  }
+
+  .input {
+    @apply w-full px-3 py-2 border border-[hsl(var(--border))] rounded-lg bg-[hsl(var(--bg-card))] text-[hsl(var(--text))] placeholder-[hsl(var(--text-muted))] focus:outline-none focus:ring-2 focus:ring-[hsl(var(--ring))] focus:ring-offset-2 focus:ring-offset-[hsl(var(--bg))] transition-colors;
+  }
+
+  .card {
+    @apply bg-[hsl(var(--bg-card))] border border-[hsl(var(--border))] rounded-lg shadow-sm transition-colors;
+  }
+
+  .card-hover {
+    @apply hover:bg-[hsl(var(--bg-card-hover))] transition-colors;
+  }
+
+  .touch-target {
+    @apply min-h-[44px] min-w-[44px];
   }
 }
